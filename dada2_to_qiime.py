@@ -23,9 +23,10 @@ def main():
 
     # Input file
     parser.add_argument('-i', '--input', dest='input', required=True, help='The input file')
-    
     # Threads
     parser.add_argument('-t', '--threads', dest='threads', default=8, help='The number of threads to use for QIIME functions')
+    # Prefix
+    parser.add_argument('-p', '--prefix', dest='prefix', default="SV", help='The prefix for each unique sequence variant i.e SV1')
 
     # Parse arguments
     args = parser.parse_args()
@@ -39,9 +40,9 @@ def main():
         for index, line in enumerate(seqtab_handle):
             if index == 0:
                 otus = map(remove_quotes, line.rstrip('\n').split(','))[1::]
-                otu_dict = {"node{}".format(n): seq for n, seq in enumerate(otus)}
+                otu_dict = {"{}{}".format(prefix,n): seq for n, seq in enumerate(otus)}
                 dict_to_repset(rep_set, otu_dict)
-                parsed_lines.append(["#OTU ID"]+["node"+n for n in (map(str, range(0, len(otus))))])
+                parsed_lines.append(["#OTU ID"]+[prefix+n for n in (map(str, range(0, len(otus))))])
             else:
                 parsed_lines.append(remove_quotes(line).rstrip().split(','))
 

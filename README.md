@@ -20,7 +20,7 @@ This will create:
 ### Outputs explained
 
 **seqtab.nochim.otutable**  
-A transposed version of the `seqtab.nochim.csv` with each fill length sequence variant replaced with a simple numerical notation, i.e. `node1`
+A transposed version of the `seqtab.nochim.csv` with each fill length sequence variant replaced with a simple numerical notation, i.e. `SV1`
 
 **seqtab.nochim.repset**  
 A mapping between the numerical notations and the actual sequence variants

@@ -1,6 +1,21 @@
 # dada2_to_qiime
 Convert DADA2 Seqtabs to QIIME files
 
+```
+usage: dada2_to_qiime.py [-h] -i INPUT [-t THREADS] [-p PREFIX]
+
+Convert a dada2 seqtab to qiime formatted goodies
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        The input file
+  -t THREADS, --threads THREADS
+                        The number of threads to use for QIIME functions
+  -p PREFIX, --prefix PREFIX
+                        The prefix for each unique sequence variant i.e SV1
+```
+
 ## Instructions
 After creating your bimeric filtered seqtab in DADA2, write it out to a CSV
 ```

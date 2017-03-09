@@ -32,6 +32,7 @@ def main():
     args = parser.parse_args()
     seqtab = args.input
     threads = args.threads
+    prefix = args.prefix
 
     otutable = seqtab + ".otutable"
     rep_set = seqtab + ".repset"
